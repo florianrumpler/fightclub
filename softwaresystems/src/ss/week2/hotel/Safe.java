@@ -17,12 +17,12 @@ public class Safe {
      * Constructor of the safe, assigns a password.
      * @param pass A <code>String</code> with the safe's new password.
      */
-    //@ requires Password.setWord(passwrod.INITIAL, pass);
-    //@ ensures Password.testWord(pass);
+    //@ ensures !isOpen();
+    //@ ensures !isActive();
     public Safe (String pass){
         assert (pass != null);
         password = new Password();
-        password.setWord(password.INITIAL, pass);
+        password.setWord(Password.INITIAL, pass);
         active = false;
         open = false;
     }
@@ -41,7 +41,6 @@ public class Safe {
     /**
      * Disables this <code>Safe</code>.
      */
-    //@ requires isActive();
     //@ ensures !isActive();
     //@ ensures !isOpen();
     public void deactivate () {
@@ -53,19 +52,16 @@ public class Safe {
      * Opens the safe if the code is correct.
      * @param code A <code>String</code> which has to be the same as the <code>Safe</code>'s password.
      */
-    //@ requires isActive();
-    //@ requires !isOpen();
-    //@ requires password.testWord(code);
-    //@ ensures isOpen();
+    //@ requires code != null;
+    //@ ensures password.testWord(code) ==> isOpen();
     public void open (String code) {
+        assert (code != null);
         open = isActive() && password.testWord(code);
     }
 
     /**
      * Closes this <code>Safe</code>.
      */
-    //@ requires isActive();
-    //@ requires isOpen();
     //@ ensures !isOpen();
     public void close () {
         open = false;
@@ -94,8 +90,7 @@ public class Safe {
      * Returns the <code>Password</code> of this <code>Safe</code>.
      * @return A <code>Password</code> of this <code>Safe</code>.
      */
-    //@ requires password != null;
-    //@ ensures \result == password;
+    //@ ensures \result != null;
     /*@ pure */public Password getPassword () {
         return password;
     }
