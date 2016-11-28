@@ -1,0 +1,8 @@
+package ss.week1;
+
+public class HelloWorld {
+	public String result (setting) {
+		
+	}
+	int setting = 0; //(0 = off, 33 = low, 67 = med, 100 = high)		
+}

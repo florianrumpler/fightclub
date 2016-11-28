@@ -1,0 +1,38 @@
+package ss.week1;
+
+public class Hotel {
+	public String name;
+	private static double vat;
+	private String address;
+	
+	public String getBill(Guest guest){
+		
+	}
+}
+
+public class Room {
+	private int number;
+	private Hotel hotel;
+	private double price;
+	private String type;
+	public Guest guest;
+	
+	public double getPrice(double price) {
+		return price;
+	}
+}
+
+public class Guest {
+	private int id;
+	private String name;
+	public Room room;
+	public Hotel hotel;
+}
+
+public class Employee {
+	private int id;
+	private String name;
+	private String function;
+}
+
+

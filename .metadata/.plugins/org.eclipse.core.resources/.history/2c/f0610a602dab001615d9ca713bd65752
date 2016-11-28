@@ -1,0 +1,13 @@
+package ss.week1;
+
+public class Hotel {
+	public String name;
+	private static double vat;
+	private String address;
+}
+
+public class Room {
+	private int number;
+	public String hotel;
+	
+}

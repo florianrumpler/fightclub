@@ -1,0 +1,12 @@
+package ss.week1;
+
+public class HelloWorld {
+	static int lampje = 0; //(0 = off, 33 = low, 67 = med, 100 = high)
+	public static void main (String[] args){
+		System.out.println(lampje);
+	}
+}
+
+public class ha {
+	HelloWorld lamp = new HelloWorld();
+}

@@ -1,0 +1,10 @@
+package ss.week1;
+
+public class HelloWorld {
+	public static void main(String[] args){
+		char[] greet = { 'h','e','l','l','o' };  // greet holds an array reference
+		char[] cuss = greet;                     // cuss holds the same reference
+		cuss[4] = '!';                           // Use reference to change an element
+		System.out.println(greet);   
+	}
+}

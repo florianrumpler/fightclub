@@ -1,0 +1,11 @@
+package ss.week1;
+
+public class Hotel {
+	public String name;
+	private static double vat;
+	
+	public String getName(name){
+		this.name = name;
+		
+	}
+}
